@@ -1,5 +1,4 @@
 #include "TextDrawer.h"
-#include "textDrawer.h"
 
 // TextDrawer::TextDrawer(string text, float fontSize, float positionX, float positionY, float rotation, int imageWidth, int imageHight, Ptr<freetype::FreeType2> ft2){
 //     setUpImage();
@@ -46,7 +45,7 @@ void TextDrawer::findError(){
     errorScore = static_cast<int>(cv::sum(diff)[0]); 
 }
 
-int TextDrawer::getAverageColorFromSource() {
+int TextDrawer::getAverageColorFromSorce() {
     Mat imgF, srcF;
     image.convertTo(imgF, CV_32F, 1.0/255.0);
     srcImage->convertTo(srcF, CV_32F, 1.0/255.0);

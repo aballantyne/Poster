@@ -1,0 +1,5 @@
+*.a
+*.DS_Store
+*.o
+scraper.py
+Dickinson College Commentaries.html

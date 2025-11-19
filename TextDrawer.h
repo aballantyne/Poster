@@ -58,4 +58,5 @@ public:
      TextData getTextData() const{ return textData; }
 
      int getErrorScore() const { return errorScore; }
+     float getPercentError() const { return (float)255 * (float)errorScore / (float)(imageHeight * imageHeight * imageWidth * imageWidth); }
 };

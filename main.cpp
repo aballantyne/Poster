@@ -55,7 +55,6 @@ TextData createTextChildMutation(const TextData& textData){
     const int MAX_TRANSPARANCY_CHANGE = 10;
 
 
-
     float newFontSize = textData.fontSize * randomFloat(MIN_FONT_SIZE_MULTIPLIER, MAX_FONT_SIZE_MULTIPLIER);
 
     float newPositionX = textData.positionX + randomInt(MIN_POSITION_CHANGE, MAX_POSITION_CHANGE);
@@ -102,7 +101,13 @@ int main(){
     const int ITEMS_PER_GENERATION = 3000; 
     const int NUMBER_OF_GENERATIONS = 10; 
     const int NUMBER_BEST_KEPT = 500; 
-    
+
+    bool LOAD_CURRENT_IMAGE = true;
+    string IMAGE_PATH = "output.png"; 
+
+    if (LOAD_CURRENT_IMAGE){
+        currentImage = imread(samples::findFile(IMAGE_PATH), CV_8UC1);
+    }
     int t = 0;
     while(true){
         t++;
@@ -117,11 +122,6 @@ int main(){
 
 
         for (int i = 0; i < NUMBER_OF_GENERATIONS; i++){
-            imshow("best", textDrawers[0].getImage());
-            imshow("best1", textDrawers[1].getImage());
-            imshow("best2", textDrawers[2].getImage());
-            waitKey(20);
-
             textDrawers.erase(textDrawers.begin() + NUMBER_BEST_KEPT, textDrawers.end());
             for (int drawerIndex = 0; drawerIndex < NUMBER_BEST_KEPT; drawerIndex++){
                 for (int j = 0; j < ITEMS_PER_GENERATION/NUMBER_BEST_KEPT; j++){
@@ -131,11 +131,9 @@ int main(){
             }
             cout << "New Generation " << i << endl;
             sort(textDrawers.begin(), textDrawers.end(), [](const TextDrawer &a, const TextDrawer &b) { return a.getErrorScore() < b.getErrorScore(); });
-            cout << "Sorted; Best Error: " << textDrawers[0].getErrorScore()  << endl;
+            cout << "Sorted; Best Error: " << textDrawers[0].getErrorScore() << ", " <<  textDrawers[0].getPercentError() << endl;
         }
         currentImage = textDrawers[0].getImage(); 
-        imshow("best", textDrawers[0].getImage());
-        waitKey(20);
         imwrite("output.png", currentImage);
         cout << t << endl; 
     }
