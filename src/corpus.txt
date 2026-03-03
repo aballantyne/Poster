@@ -246,7 +246,7 @@ ergō
 ripere
 error
 etiam
-ex,
+ex
 cipere
 exemplum
 ercēre
@@ -294,7 +294,7 @@ fōns
 for
 fōrma
 fors
-forsitan,
+forsitan
 forte
 fortis
 fortūna
@@ -369,7 +369,7 @@ ingredior
 inimīcus
 initium
 iniūria
-inquam,
+inquam
 stituere
 īnsula
 integer
@@ -498,9 +498,9 @@ nēmō
 nemus
 neque
 scīre
-nisi,
+nisi
 niger
-nihil,
+nihil
 nimis
 nimius
 nōbilis
@@ -557,7 +557,7 @@ pater
 patior
 patria
 paucī
-paulō,
+paulō
 pauper
 pāx
 pectus
@@ -711,7 +711,7 @@ sanguis
 sānus
 sapiēns
 sapientia
-satis,
+satis
 saxum
 scelus
 scientia
@@ -786,7 +786,7 @@ tamen
 tamquam
 tandem
 tangere
-tantum,
+tantum
 tantus
 tardus
 tēctum
@@ -878,7 +878,7 @@ vōx
 urbs
 ūsque
 ūsus
-ut,
+ut
 uterque
 ūtilis
 ūtor
